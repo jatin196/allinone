@@ -1,0 +1,7 @@
+{% include 'portfolio/head.html' %}
+
+{% for blog in blog_set %}
+<h1><a href="#">{{ blog.title }}</a></h1>
+{% endfor %}
+
+    {% include 'portfolio/scripts.html' %}
