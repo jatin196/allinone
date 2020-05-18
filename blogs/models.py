@@ -5,9 +5,14 @@ class blog(models.Model):
     content = models.TextField()
     author = models.CharField(max_length=35)
     cover = models.ImageField(null=True, blank=True)
+    def __str__(self):
+        return "Blog : {name}".format(name=self.title)
 
 
 class comments(models.Model):
+    Blog = models.ForeignKey(blog, on_delete=models.CASCADE, related_name='Comment')
     comment_author = models.CharField(max_length=35)
     timestamp = models.DateTimeField(auto_now_add=True)
     comment_body = models.TextField()
+    def __str__(self):
+        return "Comment by : {name}".format(name=self.comment_author)
