@@ -1,0 +1,18 @@
+{% include 'ecommerce/navbar-ecom.html' %}
+    <body>
+    {% for product in products %}
+<a href="{% url 'ecom:detail' pk=product.pk %}">
+  <div class="card" style="width: 18rem;">
+  <img src="{{ product.product_cover.url }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5>{{ product.product_name }}</h5>
+    <p class="mr-0 float-left"> by {{ product.product_brand }}</p>
+    <p class=" ml-0 float-right"> $ {{ product.product_price }}</p>
+
+
+ </div>
+</div>
+      </a>
+
+    {% endfor%}
+    </body>

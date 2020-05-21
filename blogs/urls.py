@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import (BlogDetailView, BlogListView, Search, BlogAdd
-# ,                   BlogDelete
+,                   BlogDelete
     , BlogUpdate
  )
 
@@ -11,8 +11,8 @@ urlpatterns = [
     path('add/', BlogAdd.as_view(), name='add-blog'),
 
     path('detail/<int:pk>/', BlogDetailView, name='detail'),
-    # path('detail/<int:pk>/delete', BlogDelete, name='blog-delete'),
-    path('detail/<int:pk>/update', BlogUpdate, name='blog-update'),
+    path('detail/<int:pk>/delete/', BlogDelete, name='delete-blog'),
+    path('detail/<int:pk>/update/', BlogUpdate, name='update-blog'),
 
     # path('find/', find, name='find'),
 ]

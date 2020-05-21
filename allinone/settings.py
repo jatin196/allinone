@@ -42,10 +42,14 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
+    'tinymce',
+    'ecom',
     'portfolio',
     'blogs',
     'debug_toolbar',
+    'crispy_forms',
+
+
 ]
 
 MIDDLEWARE = [
@@ -126,6 +130,35 @@ AUTHENTICATION_BACKENDS = (
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+#
+# TINYMCE_DEFAULT_CONFIG = {
+#     'cleanup_on_startup': True,
+#     'custom_undo_redo_levels': 20,
+#     'selector': 'textarea',
+#     'theme': 'modern',
+#     'plugins': '''
+#             textcolor save link image media preview codesample contextmenu
+#             table code lists fullscreen  insertdatetime  nonbreaking
+#             contextmenu directionality searchreplace wordcount visualblocks
+#             visualchars code fullscreen autolink lists  charmap print  hr
+#             anchor pagebreak
+#             ''',
+#     'toolbar1': '''
+#             fullscreen preview bold italic underline | fontselect,
+#             fontsizeselect  | forecolor backcolor | alignleft alignright |
+#             aligncenter alignjustify | indent outdent | bullist numlist table |
+#             | link image media | codesample |
+#             ''',
+#     'toolbar2': '''
+#             visualblocks visualchars |
+#             charmap hr pagebreak nonbreaking anchor |  code |
+#             ''',
+#     'contextmenu': 'formats | link image',
+#     'menubar': True,
+#     'statusbar': True,
+# }
+
+
 
 USE_I18N = True
 
@@ -146,4 +179,5 @@ MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 LOGIN_REDIRECT_URL = '/home'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/home'
 SITE_ID = 1
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 django_heroku.settings(locals())

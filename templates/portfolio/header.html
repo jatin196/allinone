@@ -1,32 +1,7 @@
 {% load static %}
-<!-- <div class="top-bar">-->
-<!--        <div class="container">-->
-<!--          <div class="row d-flex align-items-center">-->
-<!--            <div class="col-md-6 d-md-block d-none">-->
-<!--              <p>Contact us on +420 777 555 333 or hello@universal.com.</p>-->
-<!--            </div>-->
-<!--            <div class="col-md-6">-->
-<!--              <div class="d-flex justify-content-md-end justify-content-between">-->
-<!--                <ul class="list-inline contact-info d-block d-md-none">-->
-<!--                  <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>-->
-<!--                  <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>-->
-<!--                </ul>-->
-<!--                <div class="login"><a href="#" data-toggle="modal" data-target="#login-modal" class="login-btn"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline-block">Sign In</span></a><a href="customer-register.html" class="signup-btn"><i class="fa fa-user"></i><span class="d-none d-md-inline-block">Sign Up</span></a></div>-->
-<!--                <ul class="social-custom list-inline">-->
-<!--                  <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>-->
-<!--                  <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
-<!--                  <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>-->
-<!--                  <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>-->
-<!--                </ul>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-  <!--/ Nav Star /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">DevFolio</a>
+      <a class="navbar-brand js-scroll" href="#page-top">PortFolio</a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
@@ -45,9 +20,8 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#work">Work</a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="#contact">Contact</a>
+          <a href="#" data-toggle="modal" class="nav-link js-scroll" data-target="#login-modal">Contact</a>
           </li>
            <li class="nav-item">
              {% if not user.is_authenticated %}
@@ -63,7 +37,7 @@
   <!--/ Nav End /-->
 
   <!--/ Intro Skew Star /-->
-  <div id="home" class="intro route bg-image" style="background-image: url({% static 'img/intro-bg.jpg' %})">
+  <div id="home" class="intro route bg-image" style="background-image: url({% static 'img/overlay.jpg' %})">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
       <div class="table-cell">

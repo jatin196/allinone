@@ -4,32 +4,6 @@ from django.views import generic
 from .models import blog
 from .forms import CommentForm, BlogForm
 
-def BlogDetailView(request, pk):
-    form = CommentForm()
-    if request.method == 'POST':
-        form = CommentForm(request.POST or None)
-        if form.is_valid():
-            new_comment = form.save(commit=False)
-            new_comment.Blog = get_object_or_404(blog, pk=pk)
-            context = {
-                'form' : form
-            }
-            form.save()
-            print(form)
-            return redirect(reverse('detail', kwargs={
-                'pk' : pk
-            }))
-        else:
-            form = CommentForm()
-    blog_pk = get_object_or_404(blog, pk=pk)
-    context = {
-        'blog' : blog_pk,
-        'form' : form
-    }
-
-    print(blog_pk.Comment)
-    return render(request, 'blog/blog-detail.html', context)
-
 
 class BlogListView(generic.ListView):
     model = blog
@@ -50,7 +24,6 @@ def Search(request):
             }
 
             return render(request, 'blog/list.html', context)
-    form = CommentForm()
 
 
 class BlogAdd(generic.FormView):
@@ -62,22 +35,54 @@ class BlogAdd(generic.FormView):
         return super().form_valid(form)
 
 
+def BlogDetailView(request, pk):
+    form = CommentForm()
+    if request.method == 'POST':
+        form = CommentForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            new_comment = form.save(commit=False)
+            new_comment.Blog = get_object_or_404(blog, pk=pk)
+            context = {
+                'form' : form
+            }
+            form.save()
+            print(form)
+            return redirect(reverse('detail', kwargs={
+                'pk' : pk
+            }))
+        else:
+            form = CommentForm()
+    blog_pk = get_object_or_404(blog, pk=pk)
+    context = {
+        'blog' : blog_pk,
+        'form' : form
+    }
+
+    return render(request, 'blog/blog-detail.html', context)
+
 
 def BlogUpdate(request, pk):
-    instance = get_object_or_404(blog, pk=pk)
-    form = BlogForm(request.POST or None, instance=instance)
-    print("p")
+
+    post = get_object_or_404(blog, pk=pk)
+    form = BlogForm(request.POST or None, request.FILES or None, instance=post)
     print(form)
-    if form.is_valid():
-        print("p")
-
-        form.save()
+    if request.method == 'POST':
         print(form)
-        return redirect(reverse('list'))
+        if form.is_valid():
+            print("form is valid")
+
+
+            form.save()
+            print(form)
+            return redirect('list')
     print("p")
+    context = {
+        'form': form
+    }
+    return render(request, 'blog/blog-form.html', context)
 
-    return render(request, 'blog/blog-form.html', {'form': form})
 
-
-def BlogDelete(request):
-    pass
+def BlogDelete(request, pk):
+    instance = get_object_or_404(blog, pk=pk)
+    instance.delete()
+    return redirect(reverse('list'))

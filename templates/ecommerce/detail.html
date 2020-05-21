@@ -1,0 +1,131 @@
+{% include 'ecommerce/navbar-ecom.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<body>
+            <div class="col-9 float-right">
+              <div id="productMain" class="row">
+                                  <div class="col-md-6">
+ <img src="{{ product.product_cover.url }}" class="card-img-top" style="height:237px;" alt="...">                                  </div>
+                <div class="col-md-6">
+                  <div class="box">
+                    <h1 class="text-center">{{ product.product_name }}</h1>
+                    <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a></p>
+                    <p class="price">${{ product.product_price }}</p>
+                    <p class="text-center buttons"><a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a><a href="basket.html" class="btn btn-outline-primary"><i class="fa fa-heart"></i> Add to wishlist</a></p>
+                  </div>
+                </div>
+              </div>
+              <div id="details" class="box col-md-12">
+                  {{ product.product_specs|safe }}
+              </div>
+            </div>
+            <div>
+
+                </div>
+<div class="col-3">
+    <div class="card sidebar-menu mb-4">
+<!--                <div class="card-header">-->
+<!--                  <h3 class="h4 card-title">Categories</h3>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                  <ul class="nav nav-pills flex-column category-menu">-->
+<!--                    <li><a href="category.html" class="nav-link">Men <span class="badge badge-secondary">42</span></a>-->
+<!--                      <ul class="list-unstyled">-->
+<!--                        <li><a href="category.html" class="nav-link">T-shirts</a></li>-->
+<!--                        <li><a href="category.html" class="nav-link">Shirts</a></li>-->
+<!--                        <li><a href="category.html" class="nav-link">Pants</a></li>-->
+<!--                        <li><a href="category.html" class="nav-link">Accessories</a></li>-->
+<!--                      </ul>-->
+<!--                    </li>-->
+<!--                    <li><a href="category.html" class="nav-link active">Ladies  <span class="badge badge-light">123</span></a>-->
+<!--                      <ul class="list-unstyled">-->
+<!--                        <li><a href="category.html" class="nav-link">T-shirts</a></li>-->
+<!--                        <li><a href="category.html" class="nav-link">Skirts</a></li>-->
+<!--                        <li><a href="category.html" class="nav-link">Pants</a></li>-->
+<!--                        <li><a href="category.html" class="nav-link">Accessories</a></li>-->
+<!--                      </ul>-->
+<!--                    </li>-->
+<!--                    <li><a href="category.html" class="nav-link">Kids  <span class="badge badge-secondary">11</span></a>-->
+<!--                      <ul class="list-unstyled">-->
+<!--                        <li><a href="category.html" class="nav-link">T-shirts</a></li>-->
+<!--                        <li><a href="category.html" class="nav-link">Skirts</a></li>-->
+<!--                        <li><a href="category.html" class="nav-link">Pants</a></li>-->
+<!--                        <li><a href="category.html" class="nav-link">Accessories</a></li>-->
+<!--                      </ul>-->
+<!--                    </li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+              </div>
+              <div class="card sidebar-menu mb-4">
+                <div class="card-header">
+                  <h3 class="h4 card-title">Brands <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Armani  (10)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Versace  (12)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Carlo Bruni  (15)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Jack Honey  (14)
+                        </label>
+                      </div>
+                    </div>
+                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+                  </form>
+                </div>
+              </div>
+              <div class="card sidebar-menu mb-4">
+                <div class="card-header">
+                  <h3 class="h4 card-title">Colours <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour white"></span> White (14)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour blue"></span> Blue (10)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour green"></span>  Green (20)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour yellow"></span>  Yellow (13)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour red"></span>  Red (10)
+                        </label>
+                      </div>
+                    </div>
+                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+                  </form>
+                </div>
+              </div>
+</div>
+            </body>
