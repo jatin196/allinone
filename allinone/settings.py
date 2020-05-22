@@ -25,7 +25,7 @@ SECRET_KEY = 'kbp&8*v)dvnljixsx@d*0ll(2fnzde#!tl(iat+zw#gc5^3i3t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'jatin-portfolio.herokuapp.com']
+ALLOWED_HOSTS = [ '*']
 
 
 # Application definition
