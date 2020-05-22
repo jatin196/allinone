@@ -1,6 +1,11 @@
 {% include 'ecommerce/navbar-ecom.html' %}
     <body>
+    <div class="col-9 float-right">
+    <div class="container">
+
+        <div class="row ">
     {% for product in products %}
+            <div class="col-3 mr-5 mb-4">
 <a href="{% url 'ecom:detail' pk=product.pk %}">
   <div class="card" style="width: 18rem;">
   <img src="{{ product.product_cover.url }}" class="card-img-top" alt="...">
@@ -8,11 +13,116 @@
     <h5>{{ product.product_name }}</h5>
     <p class="mr-0 float-left"> by {{ product.product_brand }}</p>
     <p class=" ml-0 float-right"> $ {{ product.product_price }}</p>
-
-
  </div>
 </div>
       </a>
-
+</div>
     {% endfor%}
+            </div>
+        <div style="position:absolute; left:50%;">
+         {% if is_paginated %}
+        <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+        {% if page_obj.has_previous %}
+      <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+                        {% endif %}
+
+    </li>
+<!--    <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+    <li class="page-item"><a class="page-link" href="#">{{ page_obj.number }}</a></li>
+<!--    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+    <li class="page-item">
+        {% if page_obj.has_next %}
+      <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+                        {% endif %}
+
+    </li>
+  </ul>
+</nav>
+            {% endif %}
+</div>
+
+        </div>
+
+    </div>
+   <div class="col-3">
+              <div class="card sidebar-menu mb-4">
+                <div class="card-header">
+                  <h3 class="h4 card-title">Brands <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Armani  (10)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Versace  (12)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Carlo Bruni  (15)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Jack Honey  (14)
+                        </label>
+                      </div>
+                    </div>
+                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+                  </form>
+                </div>
+              </div>
+              <div class="card sidebar-menu mb-4">
+                <div class="card-header">
+                  <h3 class="h4 card-title">Colours <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour white"></span> White (14)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour blue"></span> Blue (10)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour green"></span>  Green (20)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour yellow"></span>  Yellow (13)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour red"></span>  Red (10)
+                        </label>
+                      </div>
+                    </div>
+                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+                  </form>
+                </div>
+
+              </div>
+
+    </div>
+
+
     </body>

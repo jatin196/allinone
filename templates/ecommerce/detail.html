@@ -13,7 +13,9 @@
                     <h1 class="text-center">{{ product.product_name }}</h1>
                     <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a></p>
                     <p class="price">${{ product.product_price }}</p>
-                    <p class="text-center buttons"><a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a><a href="basket.html" class="btn btn-outline-primary"><i class="fa fa-heart"></i> Add to wishlist</a></p>
+                    <p class="text-center buttons"><a href="{% url 'ecom:add-to-cart' pk=product.pk %}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+<!--                      <a href="basket.html" class="btn btn-outline-primary"><i class="fa fa-heart"></i> Add to wishlist</a>-->
+                    </p>
                   </div>
                 </div>
               </div>
@@ -21,43 +23,8 @@
                   {{ product.product_specs|safe }}
               </div>
             </div>
-            <div>
 
-                </div>
 <div class="col-3">
-    <div class="card sidebar-menu mb-4">
-<!--                <div class="card-header">-->
-<!--                  <h3 class="h4 card-title">Categories</h3>-->
-<!--                </div>-->
-<!--                <div class="card-body">-->
-<!--                  <ul class="nav nav-pills flex-column category-menu">-->
-<!--                    <li><a href="category.html" class="nav-link">Men <span class="badge badge-secondary">42</span></a>-->
-<!--                      <ul class="list-unstyled">-->
-<!--                        <li><a href="category.html" class="nav-link">T-shirts</a></li>-->
-<!--                        <li><a href="category.html" class="nav-link">Shirts</a></li>-->
-<!--                        <li><a href="category.html" class="nav-link">Pants</a></li>-->
-<!--                        <li><a href="category.html" class="nav-link">Accessories</a></li>-->
-<!--                      </ul>-->
-<!--                    </li>-->
-<!--                    <li><a href="category.html" class="nav-link active">Ladies  <span class="badge badge-light">123</span></a>-->
-<!--                      <ul class="list-unstyled">-->
-<!--                        <li><a href="category.html" class="nav-link">T-shirts</a></li>-->
-<!--                        <li><a href="category.html" class="nav-link">Skirts</a></li>-->
-<!--                        <li><a href="category.html" class="nav-link">Pants</a></li>-->
-<!--                        <li><a href="category.html" class="nav-link">Accessories</a></li>-->
-<!--                      </ul>-->
-<!--                    </li>-->
-<!--                    <li><a href="category.html" class="nav-link">Kids  <span class="badge badge-secondary">11</span></a>-->
-<!--                      <ul class="list-unstyled">-->
-<!--                        <li><a href="category.html" class="nav-link">T-shirts</a></li>-->
-<!--                        <li><a href="category.html" class="nav-link">Skirts</a></li>-->
-<!--                        <li><a href="category.html" class="nav-link">Pants</a></li>-->
-<!--                        <li><a href="category.html" class="nav-link">Accessories</a></li>-->
-<!--                      </ul>-->
-<!--                    </li>-->
-<!--                  </ul>-->
-<!--                </div>-->
-              </div>
               <div class="card sidebar-menu mb-4">
                 <div class="card-header">
                   <h3 class="h4 card-title">Brands <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
