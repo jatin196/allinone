@@ -25,7 +25,7 @@ SECRET_KEY = 'kbp&8*v)dvnljixsx@d*0ll(2fnzde#!tl(iat+zw#gc5^3i3t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'jatin-portfolio.herokuapp.com']
 
 
 # Application definition
@@ -182,7 +182,7 @@ SITE_ID = 1
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # django_heroku.settings(locals())
-if os.environ.get('DJANGO_DEVELOPMENT') != True:
+if os.environ.get('DJANGO_DEVELOPMENT') != 'True':
     import dj_database_url
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
